@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "perfdoctor"
+version = "0.1.0"
+description = "Diagnostics for LLM training performance: nsys comm/compute overlap forensics, E2E MFU estimation, silent-failure guards"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Jin Cheng (vInThePrism)" }]
+dependencies = []
+
+[project.optional-dependencies]
+torch = ["torch>=2.1"]
+dev = ["pytest>=7.0", "torch>=2.1"]
+
+[project.scripts]
+perfdoctor-overlap = "perfdoctor.nsys_overlap:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

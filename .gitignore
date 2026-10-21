@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.env
+.env.*
+.DS_Store
+*.sqlite
+*.nsys-rep
+*.qdrep
